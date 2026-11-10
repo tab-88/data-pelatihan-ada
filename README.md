@@ -6,17 +6,16 @@ Situs statis untuk alamat `https://data-pelatihan-ada.promath.site`. Tidak ada p
 
 | Berkas | Fungsi |
 | --- | --- |
-| `index.html` | Halaman utama: daftar tabel yang dapat di-scrape, sel Colab awal, ringkasan, dan kamus data |
-| `transaksi.html` | Tabel mentah 505 baris x 14 kolom untuk latihan scraping (Sesi 3) |
+| `index.html` | Halaman utama: tabel transaksi 505 baris x 14 kolom (`id="tabel-transaksi"`) dan kamus data, untuk latihan scraping (Sesi 3) |
 | `daftar_produk.html` | Tabel produk dan wilayah untuk latihan Beautiful Soup (Sesi 3) |
 | `robots.txt` | Contoh aturan pengambilan data untuk latihan etika (folder `/privat/` tidak boleh diambil) |
-| `style.css` | Tampilan semua halaman |
+| `style.css` | Tampilan kedua halaman |
 
 Berkas CSV tidak disimpan di folder ini dan tidak ditautkan dari situs. CSV tetap berada di Google Drive sebagai pintu data yang terpisah, supaya latihan scraping tidak punya jalan pintas.
 
 ## Langkah 1. Periksa di VS Code
 
-Buka folder ini di VS Code (File, Open Folder). Pasang ekstensi Live Server bila belum ada, klik kanan `index.html`, lalu pilih Open with Live Server. Pastikan ketiga halaman tampil dan tautannya berpindah dengan benar.
+Buka folder ini di VS Code (File, Open Folder). Pasang ekstensi Live Server bila belum ada, klik kanan `index.html`, lalu pilih Open with Live Server. Pastikan kedua halaman tampil dan tautannya berpindah dengan benar.
 
 ## Langkah 2. Kirim ke GitHub
 
