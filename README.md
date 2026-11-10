@@ -6,16 +6,17 @@ Situs statis untuk alamat `https://data-pelatihan-ada.promath.site`. Tidak ada p
 
 | Berkas | Fungsi |
 | --- | --- |
-| `index.html` | Halaman utama: tautan unduh CSV dari Google Drive, sel Colab siap salin, ringkasan, dan kamus data |
+| `index.html` | Halaman utama: daftar tabel yang dapat di-scrape, sel Colab awal, ringkasan, dan kamus data |
+| `transaksi.html` | Tabel mentah 505 baris x 14 kolom untuk latihan scraping (Sesi 3) |
 | `daftar_produk.html` | Tabel produk dan wilayah untuk latihan Beautiful Soup (Sesi 3) |
 | `robots.txt` | Contoh aturan pengambilan data untuk latihan etika (folder `/privat/` tidak boleh diambil) |
-| `style.css` | Tampilan kedua halaman |
+| `style.css` | Tampilan semua halaman |
 
-Berkas CSV tidak disimpan di folder ini. CSV tetap berada di Google Drive, dan halaman utama hanya menautkannya.
+Berkas CSV tidak disimpan di folder ini dan tidak ditautkan dari situs. CSV tetap berada di Google Drive sebagai pintu data yang terpisah, supaya latihan scraping tidak punya jalan pintas.
 
 ## Langkah 1. Periksa di VS Code
 
-Buka folder ini di VS Code (File, Open Folder). Pasang ekstensi Live Server bila belum ada, klik kanan `index.html`, lalu pilih Open with Live Server. Pastikan kedua halaman tampil dan tautannya berpindah dengan benar.
+Buka folder ini di VS Code (File, Open Folder). Pasang ekstensi Live Server bila belum ada, klik kanan `index.html`, lalu pilih Open with Live Server. Pastikan ketiga halaman tampil dan tautannya berpindah dengan benar.
 
 ## Langkah 2. Kirim ke GitHub
 
@@ -42,7 +43,7 @@ Ganti `NAMA-AKUN-ANDA` dengan nama pengguna GitHub Prof.
 ## Langkah 4. Pasang subdomain
 
 1. Di proyek Vercel, buka Settings, lalu Domains, dan tambahkan `data-pelatihan-ada.promath.site`.
-2. Vercel menampilkan satu catatan DNS bertipe CNAME. Buka pengelola DNS domain `promath.site`, buat catatan CNAME dengan nama `data-pelatihan-ada`, dan isi nilainya persis seperti yang ditampilkan Vercel (umumnya `cname.vercel-dns.com`).
+2. Vercel menampilkan satu catatan DNS bertipe CNAME. Buka pengelola DNS domain `promath.site`, buat catatan CNAME dengan nama `data-pelatihan-ada`, dan isi nilainya persis seperti yang ditampilkan Vercel. Nilai itu khusus untuk proyek Prof dan bentuknya mirip `xxxxxxxxxxxx.vercel-dns-017.com`, jadi salin dari layar Vercel dan jangan menebaknya.
 3. Tunggu sampai status domain di Vercel berubah menjadi Valid Configuration. Sertifikat HTTPS dipasang otomatis.
 
 ## Langkah 5. Uji sebelum dipakai

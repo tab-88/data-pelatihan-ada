@@ -13,43 +13,53 @@
   <div class="isi">
     <p class="label">Pelatihan Analis Data Muda · Universitas Pamulang</p>
     <h1>Pusat Data Pelatihan</h1>
-    <p class="sub">Unduh data penjualan alat rumah tangga yang dipakai sepanjang pelatihan, lihat kamus kolomnya, dan temukan halaman rujukan untuk latihan pengambilan data dari web.</p>
+    <p class="sub">Situs ini menyajikan data penjualan alat rumah tangga sebagai tabel HTML biasa. Tabel-tabel di sini diambil dengan scraping pada Sesi 3, lalu dibersihkan pada Unit 2.</p>
   </div>
 </header>
 
 <nav class="menu" aria-label="Menu utama">
   <div class="isi">
     <a href="index.html" aria-current="page">Beranda</a>
-    <a href="#unduh">Unduh data</a>
-    <a href="#kamus">Kamus data</a>
+    <a href="transaksi.html">Data transaksi</a>
     <a href="daftar_produk.html">Daftar produk dan wilayah</a>
+    <a href="#kamus">Kamus data</a>
   </div>
 </nav>
 
 <main>
 
-  <section id="unduh">
-    <h2>Unduh data penjualan</h2>
-    <p>Berkas <code>data_pelatihan_penjualan_alat_rumah_tangga.csv</code> berisi data mentah transaksi penjualan alat rumah tangga. Berkas inilah yang menjadi acuan pada Unit 1 sampai Unit 4, dan semua sumber lain pada pelatihan dibuat dari isi yang sama.</p>
-
-    <div class="baris-tombol">
-      <a class="tombol" href="https://drive.google.com/uc?export=download&amp;id=1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8">Unduh CSV</a>
-      <a class="tombol sekunder" href="https://drive.google.com/file/d/1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8/view?usp=sharing" target="_blank" rel="noopener">Buka di Google Drive</a>
+  <section id="tabel">
+    <h2>Tabel yang tersedia</h2>
+    <p>Setiap halaman di bawah ini memuat tabel HTML dengan <code>id</code> tertentu. Tugas Anda adalah mengambil tabel itu dari alamatnya, mengubahnya menjadi <em>DataFrame</em>, lalu memeriksa bentuk dan isinya.</p>
+    <div class="gulir">
+      <table>
+        <thead>
+          <tr><th>Halaman</th><th>Isi tabel</th><th>id tabel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="transaksi.html">transaksi.html</a></td><td>505 baris transaksi, 14 kolom, data mentah</td><td><code>tabel-transaksi</code></td></tr>
+          <tr><td><a href="daftar_produk.html">daftar_produk.html</a></td><td>22 produk beserta kategori dan kisaran harga</td><td><code>tabel-produk</code></td></tr>
+          <tr><td><a href="daftar_produk.html#wilayah">daftar_produk.html</a></td><td>6 wilayah beserta provinsi</td><td><code>tabel-wilayah</code></td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <p>Untuk membacanya langsung di Google Colab tanpa mengunduh, jalankan sel berikut. Hasil <code>shape</code> harus menunjukkan 505 baris dan 14 kolom.</p>
+    <p style="margin-top:1rem">Titik awal di Google Colab: periksa dulu aturan situs, lalu ambil halamannya. Status <code>200</code> berarti permintaan berhasil.</p>
 
     <div class="bungkus-kode">
       <button class="salin" type="button" data-target="kode-colab">Salin</button>
-<pre id="kode-colab"><code>import pandas as pd
+<pre id="kode-colab"><code>import requests
 
-URL = "https://drive.google.com/uc?export=download&amp;id=1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8"
-df = pd.read_csv(URL)
-print(df.shape)   # (505, 14)
-df.head()</code></pre>
+BASE = "https://data-pelatihan-ada.promath.site"
+
+print(requests.get(BASE + "/robots.txt").text)
+
+r = requests.get(BASE + "/transaksi.html")
+print(r.status_code)
+html = r.text</code></pre>
     </div>
 
-    <p class="catatan">Jangan membuka berkas CSV ini di Excel lalu menyimpannya kembali. Excel mengubah format tanggal dan pemisah ribuan tanpa pemberitahuan, sehingga isi berkas tidak lagi sama dengan sumber acuan. Bila ingin melihat isinya, baca dengan pandas atau buka dengan editor teks.</p>
+    <p>Setelah tabel <code>tabel-transaksi</code> berhasil diambil, hasilnya harus berbentuk 505 baris dan 14 kolom. Bandingkan dengan data yang sama dari sumber lain pada pelatihan.</p>
   </section>
 
   <section id="ringkasan">
@@ -70,7 +80,7 @@ df.head()</code></pre>
 
   <section id="kamus">
     <h2>Kamus data</h2>
-    <p>Berikut arti setiap kolom pada berkas CSV. Kolom ketiga memuat hal yang perlu diperhatikan saat membaca data mentahnya.</p>
+    <p>Berikut arti setiap kolom pada tabel transaksi. Kolom ketiga memuat hal yang perlu diperhatikan saat membaca data mentahnya.</p>
     <div class="gulir">
       <table>
         <thead>
@@ -98,12 +108,13 @@ df.head()</code></pre>
 
   <section id="sumber-lain">
     <h2>Sumber data lain</h2>
-    <p>Selain berkas CSV, data yang sama juga disediakan lewat dua sumber online yang dipakai pada sesi berikutnya. Alamat proyek, kunci akses, dan tautannya dibagikan oleh pengajar pada sesi yang bersangkutan.</p>
+    <p>Data transaksi yang sama juga tersedia lewat sumber lain yang dipakai pada sesi berbeda. Tautan, alamat proyek, dan kunci aksesnya dibagikan oleh pengajar pada sesi yang bersangkutan.</p>
     <ul class="rapat">
-      <li>Sesi 3: basis data Supabase yang dibaca lewat API REST.</li>
+      <li>Sesi 2: berkas CSV dan Excel yang dibaca dari berkas.</li>
+      <li>Sesi 3: halaman web ini (scraping) dan basis data Supabase yang dibaca lewat API REST.</li>
       <li>Sesi 4: Google Sheets yang dibaca lewat tautan ekspor CSV, gspread, dan Apps Script.</li>
     </ul>
-    <p style="margin-top:.85rem">Halaman <a href="daftar_produk.html">daftar produk dan wilayah</a> dipakai pada Sesi 3 untuk berlatih mengambil tabel dari web dengan Beautiful Soup.</p>
+    <p class="catatan" style="margin-top:.85rem">Bila Anda memperoleh berkas CSV, jangan membukanya di Excel lalu menyimpannya kembali. Excel mengubah format tanggal dan pemisah ribuan tanpa pemberitahuan, sehingga isinya tidak lagi sama dengan sumber acuan.</p>
   </section>
 
 </main>

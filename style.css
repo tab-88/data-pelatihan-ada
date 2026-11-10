@@ -234,3 +234,8 @@ footer {
   section { padding: 1.1rem 1rem 1.2rem; }
   .tombol { width: 100%; text-align: center; }
 }
+
+/* Tabel besar untuk halaman data transaksi */
+.gulir.tinggi { max-height: 70vh; overflow: auto; }
+.tabel-besar th, .tabel-besar td { font-size: .82rem; padding: .35rem .65rem; white-space: nowrap; }
+.tabel-besar thead th { position: sticky; top: 0; z-index: 1; }
