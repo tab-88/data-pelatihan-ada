@@ -3,36 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daftar Produk dan Wilayah · Pusat Data Pelatihan</title>
-  <meta name="description" content="Daftar baku produk, kategori, harga satuan, dan wilayah untuk latihan pengambilan data dari web.">
+  <title>Daftar Produk dan Wilayah</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="atas">
-  <div class="isi">
-    <p class="label">Pelatihan Analis Data Muda · Universitas Pamulang</p>
-    <h1>Daftar Produk dan Wilayah</h1>
-    <p class="sub">Daftar baku yang menjadi rujukan nama produk, kategori, dan wilayah pada data penjualan. Halaman ini dipakai untuk berlatih mengambil lebih dari satu tabel dari web pada Sesi 3.</p>
-  </div>
-</header>
+<h1>Daftar Produk dan Wilayah</h1>
+<p class="ket">Rujukan nama produk, kategori, dan wilayah pada laporan penjualan</p>
 
-<nav class="menu" aria-label="Menu utama">
-  <div class="isi">
-    <a href="index.html">Data transaksi</a>
-    <a href="#produk" aria-current="page">Produk</a>
-    <a href="#wilayah">Wilayah</a>
-    <a href="index.html#kamus">Kamus data</a>
-  </div>
-</nav>
-
-<main>
-
-  <section id="produk">
-    <h2>Daftar produk</h2>
-    <p>Harga terendah dan tertinggi adalah harga satuan yang tercatat pada data penjualan selama periode Mei sampai Oktober 2025. Harga satu produk berubah antarwaktu, sehingga setiap produk memiliki dua nilai.</p>
-    <div class="gulir">
-      <table id="tabel-produk" class="data-produk">
+<h2>Daftar produk</h2>
+<div class="gulir">
+<table id="tabel-produk">
         <caption>22 produk dalam 6 kategori</caption>
         <thead>
           <tr><th class="angka">No</th><th>Produk</th><th>Kategori</th><th class="angka">Harga terendah</th><th class="angka">Harga tertinggi</th></tr>
@@ -62,14 +43,11 @@
           <tr><td class="angka">22</td><td>Shower</td><td>Perlengkapan Kamar Mandi</td><td class="angka">Rp 160.000</td><td class="angka">Rp 177.000</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
+</div>
 
-  <section id="wilayah">
-    <h2>Daftar wilayah</h2>
-    <p>Enam kota tempat transaksi terjadi, beserta provinsinya.</p>
-    <div class="gulir">
-      <table id="tabel-wilayah" class="data-wilayah">
+<h2>Daftar wilayah</h2>
+<div class="gulir">
+<table id="tabel-wilayah">
         <caption>6 wilayah</caption>
         <thead>
           <tr><th class="angka">No</th><th>Wilayah</th><th>Provinsi</th></tr>
@@ -83,20 +61,9 @@
           <tr><td class="angka">6</td><td>Yogyakarta</td><td>DI Yogyakarta</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
+</div>
 
-  <section id="etika">
-    <h2>Sebelum mengambil data dari web</h2>
-    <p>Periksa berkas <a href="robots.txt"><code>robots.txt</code></a> situs lebih dulu untuk mengetahui bagian yang tidak boleh diambil secara otomatis. Pada situs latihan ini, folder <code>/privat/</code> dinyatakan tidak boleh diambil, dan seluruh halaman lain boleh dibaca.</p>
-    <p>Kirim permintaan dengan jeda yang wajar, dan ambil hanya data yang memang dibutuhkan.</p>
-  </section>
-
-</main>
-
-<footer>
-  <p>Data contoh untuk keperluan pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</p>
-</footer>
+<footer>Data contoh untuk pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</footer>
 
 </body>
 </html>

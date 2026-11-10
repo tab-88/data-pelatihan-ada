@@ -3,37 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data Transaksi Penjualan · Pusat Data Pelatihan</title>
-  <meta name="description" content="Tabel mentah transaksi penjualan alat rumah tangga untuk latihan scraping dan pembersihan data, Pelatihan Analis Data Muda, Universitas Pamulang.">
+  <title>Laporan Penjualan Alat Rumah Tangga</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="atas">
-  <div class="isi">
-    <p class="label">Pelatihan Analis Data Muda · Universitas Pamulang</p>
-    <h1>Data Transaksi Penjualan</h1>
-    <p class="sub">Tabel mentah 505 baris dan 14 kolom, disajikan sebagai tabel HTML biasa untuk diambil dengan scraping pada Sesi 3.</p>
-  </div>
-</header>
+<h1>Laporan Penjualan Alat Rumah Tangga</h1>
+<p class="ket">Periode 25 Mei sampai 24 Oktober 2025 · 6 wilayah · 6 outlet · 505 transaksi</p>
 
-<nav class="menu" aria-label="Menu utama">
-  <div class="isi">
-    <a href="index.html" aria-current="page">Data transaksi</a>
-    <a href="daftar_produk.html#produk">Produk</a>
-    <a href="daftar_produk.html#wilayah">Wilayah</a>
-    <a href="index.html#kamus">Kamus data</a>
-  </div>
-</nav>
-
-<main>
-
-  <section id="transaksi">
-    <h2>Tabel transaksi</h2>
-    <p>Data penjualan alat rumah tangga periode 25 Mei sampai 24 Oktober 2025 di 6 kota dan 6 outlet. Seluruh sel ditampilkan apa adanya, termasuk penulisan yang belum seragam, sel kosong, dan baris ganda, karena data ini dipakai untuk berlatih scraping lalu pembersihan. Tabel ini memiliki <code>id="tabel-transaksi"</code>.</p>
-    <div class="gulir tinggi">
-      <table id="tabel-transaksi" class="tabel-besar">
-        <caption>505 baris transaksi, 14 kolom</caption>
+<div class="gulir">
+<table id="tabel-transaksi">
+        
         <thead>
           <tr><th>ID_Pembeli</th><th>Jenis_Kelamin</th><th class="angka">Usia</th><th>Wilayah</th><th>Tanggal_Pembelian</th><th>Outlet</th><th>Produk</th><th>Kategori</th><th class="angka">Jumlah</th><th class="angka">Harga_Satuan</th><th class="angka">Total_Pembayaran</th><th class="angka">Diskon</th><th class="angka">Total_Setelah_Diskon</th><th>Metode_Pembayaran</th></tr>
         </thead>
@@ -545,42 +525,9 @@
           <tr><td>RT0004</td><td>Laki-Laki</td><td class="angka">49</td><td>Denpasar</td><td>7/16/2025</td><td>Rumah Perabot</td><td>Gayung</td><td>Perlengkapan Kamar Mandi</td><td class="angka">1</td><td class="angka">12,000</td><td class="angka">12,000</td><td class="angka">15%</td><td class="angka">10,200</td><td>Tunai</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
+</div>
 
-  <section id="kamus">
-    <h2>Kamus data</h2>
-    <p>Berikut arti setiap kolom pada tabel transaksi. Kolom ketiga memuat hal yang perlu diperhatikan saat membaca data mentahnya.</p>
-    <div class="gulir">
-      <table>
-        <thead>
-          <tr><th>Kolom</th><th>Isi</th><th>Catatan pada data mentah</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>ID_Pembeli</code></td><td>Kode unik pembeli, diawali RT</td><td>Perlu diperiksa keunikannya</td></tr>
-          <tr><td><code>Jenis_Kelamin</code></td><td>Laki-laki atau perempuan</td><td>Penulisan tidak seragam dan ada sel kosong</td></tr>
-          <tr><td><code>Usia</code></td><td>Usia pembeli dalam tahun</td><td>Ada sel kosong dan nilai yang tidak wajar</td></tr>
-          <tr><td><code>Wilayah</code></td><td>Kota tempat transaksi terjadi</td><td>Enam kota, lihat <a href="daftar_produk.html#wilayah">daftar wilayah</a></td></tr>
-          <tr><td><code>Tanggal_Pembelian</code></td><td>Tanggal transaksi</td><td>Tersimpan sebagai teks berformat bulan/tanggal/tahun</td></tr>
-          <tr><td><code>Outlet</code></td><td>Toko tempat transaksi terjadi</td><td>Enam outlet</td></tr>
-          <tr><td><code>Produk</code></td><td>Barang yang dibeli</td><td>Lihat <a href="daftar_produk.html#produk">daftar produk</a></td></tr>
-          <tr><td><code>Kategori</code></td><td>Kelompok produk</td><td>Enam kategori</td></tr>
-          <tr><td><code>Jumlah</code></td><td>Banyak unit yang dibeli</td><td>Bilangan bulat</td></tr>
-          <tr><td><code>Harga_Satuan</code></td><td>Harga satu unit dalam rupiah</td><td>Ditulis dengan pemisah ribuan dan ada sel kosong</td></tr>
-          <tr><td><code>Total_Pembayaran</code></td><td>Jumlah dikali harga satuan, sebelum diskon</td><td>Ditulis dengan pemisah ribuan</td></tr>
-          <tr><td><code>Diskon</code></td><td>Potongan harga dalam persen</td><td>Ditulis dengan tanda persen</td></tr>
-          <tr><td><code>Total_Setelah_Diskon</code></td><td>Jumlah yang dibayar setelah diskon</td><td>Ditulis dengan pemisah ribuan</td></tr>
-          <tr><td><code>Metode_Pembayaran</code></td><td>Tunai, debit, kartu kredit, atau e-wallet</td><td>Ada sel kosong</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <p>Data contoh untuk keperluan pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</p>
-</footer>
+<footer>Data contoh untuk pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</footer>
 
 </body>
 </html>
