@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pusat Data Pelatihan Analis Data Muda</title>
+  <meta name="description" content="Data penjualan alat rumah tangga dan daftar rujukan untuk Pelatihan Analis Data Muda (Associate Data Analyst), Universitas Pamulang.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="atas">
+  <div class="isi">
+    <p class="label">Pelatihan Analis Data Muda · Universitas Pamulang</p>
+    <h1>Pusat Data Pelatihan</h1>
+    <p class="sub">Unduh data penjualan alat rumah tangga yang dipakai sepanjang pelatihan, lihat kamus kolomnya, dan temukan halaman rujukan untuk latihan pengambilan data dari web.</p>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Menu utama">
+  <div class="isi">
+    <a href="index.html" aria-current="page">Beranda</a>
+    <a href="#unduh">Unduh data</a>
+    <a href="#kamus">Kamus data</a>
+    <a href="daftar_produk.html">Daftar produk dan wilayah</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="unduh">
+    <h2>Unduh data penjualan</h2>
+    <p>Berkas <code>data_pelatihan_penjualan_alat_rumah_tangga.csv</code> berisi data mentah transaksi penjualan alat rumah tangga. Berkas inilah yang menjadi acuan pada Unit 1 sampai Unit 4, dan semua sumber lain pada pelatihan dibuat dari isi yang sama.</p>
+
+    <div class="baris-tombol">
+      <a class="tombol" href="https://drive.google.com/uc?export=download&amp;id=1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8">Unduh CSV</a>
+      <a class="tombol sekunder" href="https://drive.google.com/file/d/1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8/view?usp=sharing" target="_blank" rel="noopener">Buka di Google Drive</a>
+    </div>
+
+    <p>Untuk membacanya langsung di Google Colab tanpa mengunduh, jalankan sel berikut. Hasil <code>shape</code> harus menunjukkan 505 baris dan 14 kolom.</p>
+
+    <div class="bungkus-kode">
+      <button class="salin" type="button" data-target="kode-colab">Salin</button>
+<pre id="kode-colab"><code>import pandas as pd
+
+URL = "https://drive.google.com/uc?export=download&amp;id=1XudocGK4kEDIYAKepW8g2o7UKrIZrgC8"
+df = pd.read_csv(URL)
+print(df.shape)   # (505, 14)
+df.head()</code></pre>
+    </div>
+
+    <p class="catatan">Jangan membuka berkas CSV ini di Excel lalu menyimpannya kembali. Excel mengubah format tanggal dan pemisah ribuan tanpa pemberitahuan, sehingga isi berkas tidak lagi sama dengan sumber acuan. Bila ingin melihat isinya, baca dengan pandas atau buka dengan editor teks.</p>
+  </section>
+
+  <section id="ringkasan">
+    <h2>Ringkasan isi data</h2>
+    <div class="gulir">
+      <table>
+        <tbody>
+          <tr><th scope="row">Jumlah baris</th><td>505 baris transaksi, belum termasuk baris judul kolom</td></tr>
+          <tr><th scope="row">Jumlah kolom</th><td>14 kolom</td></tr>
+          <tr><th scope="row">Periode transaksi</th><td>25 Mei 2025 sampai 24 Oktober 2025</td></tr>
+          <tr><th scope="row">Wilayah</th><td>6 kota</td></tr>
+          <tr><th scope="row">Outlet</th><td>6 toko</td></tr>
+          <tr><th scope="row">Sifat data</th><td>Data mentah. Sebagian sel kosong dan penulisan beberapa kolom belum seragam, dan hal ini sengaja dipertahankan sebagai bahan latihan pembersihan pada Unit 2.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="kamus">
+    <h2>Kamus data</h2>
+    <p>Berikut arti setiap kolom pada berkas CSV. Kolom ketiga memuat hal yang perlu diperhatikan saat membaca data mentahnya.</p>
+    <div class="gulir">
+      <table>
+        <thead>
+          <tr><th>Kolom</th><th>Isi</th><th>Catatan pada data mentah</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>ID_Pembeli</code></td><td>Kode unik pembeli, diawali RT</td><td>Perlu diperiksa keunikannya</td></tr>
+          <tr><td><code>Jenis_Kelamin</code></td><td>Laki-laki atau perempuan</td><td>Penulisan tidak seragam dan ada sel kosong</td></tr>
+          <tr><td><code>Usia</code></td><td>Usia pembeli dalam tahun</td><td>Ada sel kosong dan nilai yang tidak wajar</td></tr>
+          <tr><td><code>Wilayah</code></td><td>Kota tempat transaksi terjadi</td><td>Enam kota, lihat <a href="daftar_produk.html#wilayah">daftar wilayah</a></td></tr>
+          <tr><td><code>Tanggal_Pembelian</code></td><td>Tanggal transaksi</td><td>Tersimpan sebagai teks berformat bulan/tanggal/tahun</td></tr>
+          <tr><td><code>Outlet</code></td><td>Toko tempat transaksi terjadi</td><td>Enam outlet</td></tr>
+          <tr><td><code>Produk</code></td><td>Barang yang dibeli</td><td>Lihat <a href="daftar_produk.html#produk">daftar produk</a></td></tr>
+          <tr><td><code>Kategori</code></td><td>Kelompok produk</td><td>Enam kategori</td></tr>
+          <tr><td><code>Jumlah</code></td><td>Banyak unit yang dibeli</td><td>Bilangan bulat</td></tr>
+          <tr><td><code>Harga_Satuan</code></td><td>Harga satu unit dalam rupiah</td><td>Ditulis dengan pemisah ribuan dan ada sel kosong</td></tr>
+          <tr><td><code>Total_Pembayaran</code></td><td>Jumlah dikali harga satuan, sebelum diskon</td><td>Ditulis dengan pemisah ribuan</td></tr>
+          <tr><td><code>Diskon</code></td><td>Potongan harga dalam persen</td><td>Ditulis dengan tanda persen</td></tr>
+          <tr><td><code>Total_Setelah_Diskon</code></td><td>Jumlah yang dibayar setelah diskon</td><td>Ditulis dengan pemisah ribuan</td></tr>
+          <tr><td><code>Metode_Pembayaran</code></td><td>Tunai, debit, kartu kredit, atau e-wallet</td><td>Ada sel kosong</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="sumber-lain">
+    <h2>Sumber data lain</h2>
+    <p>Selain berkas CSV, data yang sama juga disediakan lewat dua sumber online yang dipakai pada sesi berikutnya. Alamat proyek, kunci akses, dan tautannya dibagikan oleh pengajar pada sesi yang bersangkutan.</p>
+    <ul class="rapat">
+      <li>Sesi 3: basis data Supabase yang dibaca lewat API REST.</li>
+      <li>Sesi 4: Google Sheets yang dibaca lewat tautan ekspor CSV, gspread, dan Apps Script.</li>
+    </ul>
+    <p style="margin-top:.85rem">Halaman <a href="daftar_produk.html">daftar produk dan wilayah</a> dipakai pada Sesi 3 untuk berlatih mengambil tabel dari web dengan Beautiful Soup.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Data contoh untuk keperluan pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</p>
+</footer>
+
+<script>
+  document.querySelectorAll(".salin").forEach(function (tombol) {
+    tombol.addEventListener("click", function () {
+      var sumber = document.getElementById(tombol.dataset.target);
+      if (!sumber || !navigator.clipboard) return;
+      navigator.clipboard.writeText(sumber.innerText).then(function () {
+        tombol.textContent = "Tersalin";
+        setTimeout(function () { tombol.textContent = "Salin"; }, 1600);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

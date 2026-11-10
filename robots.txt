@@ -1,0 +1,4 @@
+# Berkas ini dibaca dulu oleh pengambil data otomatis (crawler) sebelum mengambil halaman.
+User-agent: *
+Allow: /
+Disallow: /privat/

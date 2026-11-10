@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Produk dan Wilayah · Pusat Data Pelatihan</title>
+  <meta name="description" content="Daftar baku produk, kategori, harga satuan, dan wilayah untuk latihan pengambilan data dari web.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="atas">
+  <div class="isi">
+    <p class="label">Pelatihan Analis Data Muda · Universitas Pamulang</p>
+    <h1>Daftar Produk dan Wilayah</h1>
+    <p class="sub">Daftar baku yang menjadi rujukan nama produk, kategori, dan wilayah pada data penjualan. Halaman ini dipakai untuk berlatih mengambil tabel dari web pada Sesi 3.</p>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Menu utama">
+  <div class="isi">
+    <a href="index.html">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#wilayah">Wilayah</a>
+    <a href="daftar_produk.html" aria-current="page">Daftar produk dan wilayah</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="produk">
+    <h2>Daftar produk</h2>
+    <p>Harga terendah dan tertinggi adalah harga satuan yang tercatat pada data penjualan selama periode Mei sampai Oktober 2025. Harga satu produk berubah antarwaktu, sehingga setiap produk memiliki dua nilai.</p>
+    <div class="gulir">
+      <table id="tabel-produk" class="data-produk">
+        <caption>22 produk dalam 6 kategori</caption>
+        <thead>
+          <tr><th class="angka">No</th><th>Produk</th><th>Kategori</th><th class="angka">Harga terendah</th><th class="angka">Harga tertinggi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="angka">1</td><td>Jam Dinding</td><td>Dekorasi Rumah</td><td class="angka">Rp 85.000</td><td class="angka">Rp 94.000</td></tr>
+          <tr><td class="angka">2</td><td>Lukisan</td><td>Dekorasi Rumah</td><td class="angka">Rp 350.000</td><td class="angka">Rp 387.000</td></tr>
+          <tr><td class="angka">3</td><td>Tanaman Hias</td><td>Dekorasi Rumah</td><td class="angka">Rp 75.000</td><td class="angka">Rp 83.000</td></tr>
+          <tr><td class="angka">4</td><td>Tirai</td><td>Dekorasi Rumah</td><td class="angka">Rp 140.000</td><td class="angka">Rp 154.500</td></tr>
+          <tr><td class="angka">5</td><td>Dispenser</td><td>Elektronik Rumah Tangga</td><td class="angka">Rp 425.000</td><td class="angka">Rp 469.500</td></tr>
+          <tr><td class="angka">6</td><td>Kipas Angin</td><td>Elektronik Rumah Tangga</td><td class="angka">Rp 275.000</td><td class="angka">Rp 304.000</td></tr>
+          <tr><td class="angka">7</td><td>Rice Cooker</td><td>Elektronik Rumah Tangga</td><td class="angka">Rp 400.000</td><td class="angka">Rp 442.000</td></tr>
+          <tr><td class="angka">8</td><td>Kursi Plastik</td><td>Furnitur Kecil</td><td class="angka">Rp 120.000</td><td class="angka">Rp 132.500</td></tr>
+          <tr><td class="angka">9</td><td>Meja Lipat</td><td>Furnitur Kecil</td><td class="angka">Rp 250.000</td><td class="angka">Rp 276.000</td></tr>
+          <tr><td class="angka">10</td><td>Rak Serbaguna</td><td>Furnitur Kecil</td><td class="angka">Rp 220.000</td><td class="angka">Rp 243.000</td></tr>
+          <tr><td class="angka">11</td><td>Blender</td><td>Peralatan Dapur</td><td class="angka">Rp 350.000</td><td class="angka">Rp 387.000</td></tr>
+          <tr><td class="angka">12</td><td>Kompor Gas</td><td>Peralatan Dapur</td><td class="angka">Rp 450.000</td><td class="angka">Rp 497.000</td></tr>
+          <tr><td class="angka">13</td><td>Panci</td><td>Peralatan Dapur</td><td class="angka">Rp 185.000</td><td class="angka">Rp 204.500</td></tr>
+          <tr><td class="angka">14</td><td>Wajan</td><td>Peralatan Dapur</td><td class="angka">Rp 135.000</td><td class="angka">Rp 149.000</td></tr>
+          <tr><td class="angka">15</td><td>Ember</td><td>Peralatan Kebersihan</td><td class="angka">Rp 25.000</td><td class="angka">Rp 27.500</td></tr>
+          <tr><td class="angka">16</td><td>Pel</td><td>Peralatan Kebersihan</td><td class="angka">Rp 85.000</td><td class="angka">Rp 94.000</td></tr>
+          <tr><td class="angka">17</td><td>Sapu</td><td>Peralatan Kebersihan</td><td class="angka">Rp 22.000</td><td class="angka">Rp 24.500</td></tr>
+          <tr><td class="angka">18</td><td>Vacuum Cleaner</td><td>Peralatan Kebersihan</td><td class="angka">Rp 750.000</td><td class="angka">Rp 829.000</td></tr>
+          <tr><td class="angka">19</td><td>Gayung</td><td>Perlengkapan Kamar Mandi</td><td class="angka">Rp 12.000</td><td class="angka">Rp 13.500</td></tr>
+          <tr><td class="angka">20</td><td>Keset</td><td>Perlengkapan Kamar Mandi</td><td class="angka">Rp 45.000</td><td class="angka">Rp 49.500</td></tr>
+          <tr><td class="angka">21</td><td>Sabun Cair</td><td>Perlengkapan Kamar Mandi</td><td class="angka">Rp 28.000</td><td class="angka">Rp 31.000</td></tr>
+          <tr><td class="angka">22</td><td>Shower</td><td>Perlengkapan Kamar Mandi</td><td class="angka">Rp 160.000</td><td class="angka">Rp 177.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="wilayah">
+    <h2>Daftar wilayah</h2>
+    <p>Enam kota tempat transaksi terjadi, beserta provinsinya.</p>
+    <div class="gulir">
+      <table id="tabel-wilayah" class="data-wilayah">
+        <caption>6 wilayah</caption>
+        <thead>
+          <tr><th class="angka">No</th><th>Wilayah</th><th>Provinsi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="angka">1</td><td>Bandung</td><td>Jawa Barat</td></tr>
+          <tr><td class="angka">2</td><td>Denpasar</td><td>Bali</td></tr>
+          <tr><td class="angka">3</td><td>Jakarta</td><td>DKI Jakarta</td></tr>
+          <tr><td class="angka">4</td><td>Medan</td><td>Sumatera Utara</td></tr>
+          <tr><td class="angka">5</td><td>Surabaya</td><td>Jawa Timur</td></tr>
+          <tr><td class="angka">6</td><td>Yogyakarta</td><td>DI Yogyakarta</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="etika">
+    <h2>Sebelum mengambil data dari web</h2>
+    <p>Periksa berkas <a href="robots.txt"><code>robots.txt</code></a> situs lebih dulu untuk mengetahui bagian yang tidak boleh diambil secara otomatis. Pada situs latihan ini, folder <code>/privat/</code> dinyatakan tidak boleh diambil, dan seluruh halaman lain boleh dibaca.</p>
+    <p>Kirim permintaan dengan jeda yang wajar, dan ambil hanya data yang memang dibutuhkan.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Data contoh untuk keperluan pelatihan. Program Studi Matematika S-1, FMIPA, Universitas Pamulang.</p>
+</footer>
+
+</body>
+</html>

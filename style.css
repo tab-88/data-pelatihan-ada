@@ -1,0 +1,236 @@
+:root {
+  --biru: #0d47a1;
+  --biru-tua: #08306b;
+  --biru-muda: #e8f0fb;
+  --teks: #1c2430;
+  --redup: #5a6572;
+  --garis: #d8dee6;
+  --latar: #f6f8fb;
+  --kode: #0f1b2d;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--teks);
+  background: var(--latar);
+}
+
+header.atas {
+  background: linear-gradient(135deg, var(--biru) 0%, var(--biru-tua) 100%);
+  color: #fff;
+  padding: 2.4rem 1.25rem 2.2rem;
+}
+
+header.atas .isi {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+header.atas .label {
+  margin: 0 0 .35rem;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+header.atas h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.2;
+}
+
+header.atas p.sub {
+  margin: 0;
+  max-width: 62ch;
+  opacity: .92;
+}
+
+nav.menu {
+  background: #fff;
+  border-bottom: 1px solid var(--garis);
+}
+
+nav.menu .isi {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+}
+
+nav.menu a {
+  display: inline-block;
+  padding: .7rem 0;
+  color: var(--biru);
+  text-decoration: none;
+  font-size: .95rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav.menu a:hover,
+nav.menu a[aria-current="page"] {
+  border-bottom-color: var(--biru);
+}
+
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 3rem;
+}
+
+section {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  padding: 1.35rem 1.5rem 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+section h2 {
+  margin: 0 0 .6rem;
+  font-size: 1.25rem;
+  color: var(--biru-tua);
+}
+
+p { margin: 0 0 .85rem; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--biru); }
+
+.tombol {
+  display: inline-block;
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--biru);
+  background: var(--biru);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .95rem;
+}
+
+.tombol:hover { background: var(--biru-tua); }
+
+.tombol.sekunder {
+  background: #fff;
+  color: var(--biru);
+}
+
+.tombol.sekunder:hover { background: var(--biru-muda); }
+
+.baris-tombol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 1rem 0 1.1rem;
+}
+
+.catatan {
+  border-left: 4px solid var(--biru);
+  background: var(--biru-muda);
+  padding: .7rem 1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: .95rem;
+}
+
+.bungkus-kode { position: relative; margin: .5rem 0 1rem; }
+
+pre {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: var(--kode);
+  color: #e6edf6;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+  font-size: .92em;
+}
+
+p code, td code {
+  background: var(--biru-muda);
+  padding: .1rem .35rem;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+td:first-child code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+.salin {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: .25rem .6rem;
+  font-size: .8rem;
+  border-radius: 6px;
+  border: 1px solid #3b4a63;
+  background: #1c2a42;
+  color: #dbe6f5;
+  cursor: pointer;
+}
+
+.salin:hover { background: #26395a; }
+
+.gulir { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+
+caption {
+  text-align: left;
+  color: var(--redup);
+  font-size: .9rem;
+  padding-bottom: .5rem;
+}
+
+th, td {
+  text-align: left;
+  padding: .5rem .7rem;
+  border-bottom: 1px solid var(--garis);
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--biru-muda);
+  color: var(--biru-tua);
+  border-bottom: 2px solid var(--biru);
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) { background: #fafbfd; }
+
+td.angka, th.angka { text-align: right; white-space: nowrap; }
+
+ul.rapat { margin: .25rem 0 0; padding-left: 1.2rem; }
+
+footer {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+  color: var(--redup);
+  font-size: .88rem;
+}
+
+@media (max-width: 560px) {
+  section { padding: 1.1rem 1rem 1.2rem; }
+  .tombol { width: 100%; text-align: center; }
+}
